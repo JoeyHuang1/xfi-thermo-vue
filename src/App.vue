@@ -1,12 +1,26 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
-    <router-view/>
+  <div id="app" >
+     <router-view></router-view>
   </div>
 </template>
+
+<script>
+  import Login from './views/Login.vue'
+  import ThermoList from './views/ThermoList.vue'
+
+ 
+  export default {
+    methods:{
+      gotLogin:function(payload){
+        this.$store.commit('didLogin', payload)
+      }
+    },
+    components: {
+      Login,
+      ThermoList,
+    },
+  }
+</script>
 
 <style lang="scss">
 #app {
