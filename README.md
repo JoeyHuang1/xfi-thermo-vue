@@ -6,4 +6,4 @@ Download the code, then
 
 npm install
 
-parn serve 
+yarn serve 
