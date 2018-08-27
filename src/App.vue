@@ -5,10 +5,6 @@
 </template>
 
 <script>
-  import Login from './views/Login.vue'
-  import ThermoList from './views/ThermoList.vue'
-
- 
   export default {
     methods:{
       gotLogin:function(payload){
@@ -16,8 +12,6 @@
       }
     },
     components: {
-      Login,
-      ThermoList,
     },
   }
 </script>
