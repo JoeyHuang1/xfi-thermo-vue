@@ -22,7 +22,10 @@ export default {
   mounted: async function(){
     if (this.$store.state.accessToken) {
       this.accountClass='blinkClass'
-      await this.$store.dispatch('getSeeds')
+      try{
+        await this.$store.dispatch('getSeeds')
+      }
+      catch(e){}
       this.accountClass=''
     } else {
       this.$router.push('/')

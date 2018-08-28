@@ -24,15 +24,15 @@ export default {
     login: async function(event){
         event.preventDefault()
         this.loginClass='blinkClass'
-        let loginRet=await loginService(this.account, this.password)
-        if (loginRet.access_token) {
-            this.$store.commit('didLogin', {accessToken:loginRet.access_token, 
-                userName:loginRet.fullName})
-            this.$router.push('/thermos')
-            this.loginErr=''
-        }
-        else 
+        try {
+          let loginRet=await loginService(this.account, this.password)
+          this.$store.commit('didLogin', {accessToken:loginRet.access_token, 
+              userName:loginRet.fullName})
+          this.$router.push('/thermos')
+          this.loginErr=''
+        } catch(e){
             this.loginErr=loginErrMsg
+        }
         this.loginClass=''
     }
   },

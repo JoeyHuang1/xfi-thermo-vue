@@ -8,14 +8,14 @@ async function setThermo (accessToken, seedId, value){
         'Authorization': 'Bearer '+accessToken}}
     let updateURL = ComcastConst.seedsURL+'/'+seedId+'/controls'
 
-    let good = false
     try {
       let response = await fetch(updateURL,myInit);
-      good = (response.status===200)
+      if (response.status===200)
+        return Promise.resolve(response)
     } catch(e) {
       console.log(new Error(e))
     }
-    return good
+    return Promise.reject()
 }
 
 export default setThermo
