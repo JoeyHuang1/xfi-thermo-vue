@@ -4,6 +4,7 @@
     <Thermo  v-for='thermo in this.$store.state.thermos'
       v-bind:name="thermo.name"
       v-bind:temperature="thermo.temperature"
+      v-bind:seedId="thermo.seedId"
       v-bind:key="thermo.seedId"/>
   </div>
 </template>
@@ -25,7 +26,9 @@ export default {
       try{
         await this.$store.dispatch('getSeeds')
       }
-      catch(e){}
+      catch(e){
+        
+      }
       this.accountClass=''
     } else {
       this.$router.push('/')

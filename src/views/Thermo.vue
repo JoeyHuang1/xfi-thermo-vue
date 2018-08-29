@@ -14,23 +14,22 @@
 </template>
 
 <script>
-// @ is an alias to /src
+import { Slider } from 'element-ui'
 import thermoService from '@/services/thermoService.js'
-import { Slider } from 'element-ui';
-import 'element-ui/lib/theme-chalk/index.css';
 
 export default {
   name: 'Thermo',
-  props:['name', 'temperature'],
+  props:{'name':String, 'temperature':Number, 
+    'seedId':{type:String, required:true}},
   data(){return {'isUpdating':false, sliderVal:this.temperature}},
   methods:{
-    tempeChange:async function(){
+    tempeChange:async function(val){
       this.isUpdating=true
       try{
         await thermoService(this.$store.state.accessToken, 
-          this.$vnode.key, this.sliderVal)
+          this.seedId, val)
         this.$store.commit('setTemperature', 
-          {seedId:this.$vnode.key, 'temperature':this.sliderVal})
+          {seedId:this.seedId, 'temperature':val})
       }catch(e){
         this.sliderVal = this.temperature
       }

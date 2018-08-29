@@ -1,4 +1,3 @@
-import { expect } from 'chai'
 
 /*
 import { configure } from 'enzyme';
@@ -17,8 +16,8 @@ describe("Login", () => {
     let post="{\"emailAddress\":\"bob@bob.com\",\"password\":\"LsRLB8LE3kQYWiTE7m83v+waSzoDdcJIGrc3nQhtD4M=\"}"
     let id1='joeyhuang1@gmail.com'
 
-    expect(getLoginPostData(id, pwd)).to.equal(post)
-    expect(getLoginPostData(id1, pwd)).to.not.equal(post)
+    expect(getLoginPostData(id, pwd)).toEqual(post)
+    expect(getLoginPostData(id1, pwd)).not.toEqual(post)
   });
 });
 
