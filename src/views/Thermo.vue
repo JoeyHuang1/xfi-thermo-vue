@@ -1,11 +1,11 @@
 <template>
     <div >
       <p/>
-      <div style='thermoTitleStyle'>
+      <div class='thermoTitle' >
         <span>Thermostat {{name}}:</span>
         <span v-bind:class="{'blinkClass': isUpdating}"> {{temperature}} </span>
       </div>
-      <div style='display:inline-block;width:400px'>
+      <div class='thermoSlider' >
         <Slider v-model="sliderVal" :show-tooltip="true"
           v-on:change='tempeChange' :max=90 :min=50
         ></Slider>
