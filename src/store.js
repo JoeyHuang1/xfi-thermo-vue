@@ -2,6 +2,7 @@ import Vue from 'vue'
 import Vuex from 'vuex'
 import thermoListService from '@/services/thermoListService.js'
 
+
 Vue.use(Vuex)
 
 export default new Vuex.Store({
