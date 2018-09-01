@@ -16,15 +16,14 @@
 import Thermo from './Thermo.vue'
 
 export default {
-  name: 'ThermoList',
+  name: 'ThermoList',  
   data:()=>{return{accountClass:''}},
-
   methods:{
   },
   mounted: async function(){
     if (this.$store.state.accessToken) {
       this.accountClass='blinkClass'
-      try{
+      try{    
         await this.$store.dispatch('getSeeds')
       }
       catch(e){
