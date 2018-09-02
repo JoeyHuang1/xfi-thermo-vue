@@ -1,7 +1,7 @@
 # xfi-thermo-vue
 Comcast xfi thermo control in Vue
 
-To run the code
+## To run the code
 Download the code, then
 
 npm install
@@ -10,7 +10,7 @@ yarn serve
 
 
 
-Pre-requisites:
+## Pre-requisites:
 
 1. Login to a Stringify account by prompting someone for their email & password
 2. Discover the first Nest thermostat in their account
