@@ -28,7 +28,7 @@ export default {
           let loginRet=await loginService(this.account, this.password)
           this.$store.commit('didLogin', {accessToken:loginRet.access_token, 
               userName:loginRet.fullName})
-          this.$router.push('/thermos')
+          this.$router.push({'name':'ThermoList'})
           this.loginErr=''
         } catch(e){
             this.loginErr=loginErrMsg
