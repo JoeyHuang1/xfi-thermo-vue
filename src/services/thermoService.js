@@ -13,7 +13,7 @@ async function setThermo (accessToken, seedId, value){
       if (response.status===200)
         return Promise.resolve(response)
     } catch(e) {
-      Console.log(new Error(e))
+      console.log(new Error(e))
     }
     return Promise.reject()
 }
